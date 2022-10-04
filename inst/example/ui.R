@@ -88,6 +88,11 @@ fluidPage(
     ),
 
     tabPanel(
+      div(icon("users"), "Nested Groups"),
+      timevisOutput("timelineNestedGroups")
+    ),
+
+    tabPanel(
       div(icon("sliders-h"), "Fully interactive"),
       fluidRow(
         column(

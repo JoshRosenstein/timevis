@@ -16,6 +16,10 @@ function(input, output, session) {
     timevis(data = timevisData, groups = timevisDataGroups, options = list(editable = TRUE))
   })
 
+  output$timelineNestedGroups <- renderTimevis({
+    timevis(data = timevisNestedData(), groups = timevisNestedGroups(), options = list(groupOrder = 'content'))
+  })
+
   output$timelineCustom <- renderTimevis({
     config <- list(
       editable = TRUE,

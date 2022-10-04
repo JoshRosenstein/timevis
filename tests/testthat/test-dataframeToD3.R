@@ -35,3 +35,12 @@ test_that("dataframeToD3 returns the same whether the dataframe is pure or merge
   df_rbind <- rbind(df[1, ], df[2, ])
   expect_identical(dataframeToD3(df), dataframeToD3(df_rbind))
 })
+
+test_that("dataframeToD3 does not convert logicals", {
+  df <- data.frame(name = "Dean", is_old = TRUE, stringsAsFactors = FALSE)
+  list <- list(list(name = "Dean", is_old = TRUE))
+  expect_identical(dataframeToD3(df), list)
+
+}
+
+)
